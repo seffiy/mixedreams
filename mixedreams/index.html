@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mixedreams | Israeli &amp; World Music DJ in Seattle, Bellevue &amp; Redmond</title>
+<meta name="description" content="Israeli and world music DJ for weddings, bar and bat mitzvas, parties and productions in the greater Seattle, Bellevue, Redmond and Puget Sound area.">
+<meta name="theme-color" content="#000000">
+<link rel="canonical" href="https://www.mixedreams.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mixedreams">
+<meta property="og:title" content="Mixedreams | Your dreams, my music">
+<meta property="og:description" content="Israeli and world music DJ for weddings, bar and bat mitzvas and private events in the greater Seattle area.">
+<meta property="og:url" content="https://www.mixedreams.com/">
+<!-- TODO: save a 1200x630 image (e.g. a crop of waveform.jpg) as images/og.jpg, then uncomment:
+<meta property="og:image" content="https://www.mixedreams.com/images/og.jpg">
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EntertainmentBusiness",
+  "name": "Mixedreams",
+  "description": "DJ and music services with Israeli, Jewish and world music repertoire for weddings, bar and bat mitzvas, parties and productions.",
+  "url": "https://www.mixedreams.com/",
+  "areaServed": ["Seattle, WA", "Bellevue, WA", "Redmond, WA", "Puget Sound, WA"],
+  "sameAs": [
+    "https://www.facebook.com/mixedreams",
+    "https://soundcloud.com/mixedreams",
+    "https://www.linkedin.com/company/mixedreams"
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --black: #000000;
+    --night: #050912;
+    --blue: #2F6BFF;
+    --blue-bright: #6C9CFF;
+    --pale: #CFE2FF;
+    --ice: #EEF5FF;
+    --muted: rgba(207, 226, 255, .74);
+    --line: rgba(207, 226, 255, .18);
+
+    --serif: "Frank Ruhl Libre", "Times New Roman", serif;
+    --sans: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+    --gutter: clamp(1.25rem, 5vw, 4.5rem);
+    --max: 76rem;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--black);
+    color: var(--ice);
+    font-family: var(--sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  h1, h2, h3, p { margin: 0; }
+  section[id] { scroll-margin-top: 4.5rem; }
+
+  :focus-visible { outline: 2px solid var(--pale); outline-offset: 3px; border-radius: 2px; }
+
+  .wrap { max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
+
+  .display {
+    font-family: var(--serif);
+    font-weight: 300;
+    letter-spacing: -.015em;
+    line-height: 1.02;
+  }
+  h2.display { font-size: clamp(2.2rem, 5vw, 3.9rem); }
+
+  /* Full-bleed photo backgrounds */
+  .photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+  .shade { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 3.25rem; padding: .75rem 1.9rem;
+    border: 0; border-radius: 999px;
+    background: var(--pale); color: var(--black);
+    font: 600 1rem/1 var(--sans); letter-spacing: .01em;
+    text-decoration: none; cursor: pointer; white-space: nowrap;
+    transition: background .2s, transform .2s;
+  }
+  .btn:hover { background: #fff; transform: translateY(-1px); }
+  .btn--small { min-height: 2.5rem; padding: .5rem 1.25rem; font-size: .9375rem; }
+  .textlink { color: var(--ice); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: .35em; transition: text-decoration-color .2s; }
+  .textlink:hover { text-decoration-color: var(--blue-bright); }
+
+  /* ---------- Nav ---------- */
+  .nav { position: fixed; inset: 0 0 auto 0; z-index: 20; transition: background .3s, backdrop-filter .3s; }
+  .nav.is-scrolled { background: rgba(0, 0, 0, .82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+  .nav__bar {
+    display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+    max-width: var(--max); margin-inline: auto; padding: .9rem var(--gutter);
+  }
+  .logo { display: inline-flex; align-items: center; font-family: var(--serif); font-size: 1.6rem; font-weight: 400; letter-spacing: -.01em; text-decoration: none; }
+  .logo img { height: 3.3rem; width: auto; }
+  .nav__links { display: flex; align-items: center; gap: 2rem; }
+  .nav__links a:not(.btn) { text-decoration: none; font-size: .975rem; color: var(--muted); transition: color .2s; }
+  .nav__links a:not(.btn):hover { color: var(--ice); }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    --mix: 0;
+    position: relative; overflow: hidden; isolation: isolate;
+    min-height: 100svh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 7rem 0 3rem;
+  }
+  .hero .photo { object-position: 50% 55%; }
+  .hero .tint { position: absolute; inset: 0; z-index: 0; background: #3D74FF; mix-blend-mode: multiply; pointer-events: none; }
+  .hero .shade {
+    background:
+      linear-gradient(90deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.45) 55%, rgba(0,0,0,.15) 100%),
+      linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 65%, #000 100%);
+  }
+  .hero .wrap { position: relative; z-index: 1; width: 100%; }
+
+  .mix { display: grid; font-size: clamp(3.4rem, 11.5vw, 9.75rem); }
+  .mix > span { grid-area: 1 / 1; display: block; }
+  .mix__a {
+    --o: clamp(0, calc((0.62 - var(--mix)) * 5), 1);
+    opacity: var(--o);
+    filter: blur(calc((1 - var(--o)) * 10px));
+    text-shadow: 0 2px 40px rgba(0, 0, 0, .6);
+  }
+  .mix__b {
+    --o: clamp(0, calc((var(--mix) - 0.38) * 5), 1);
+    text-align: right; color: var(--blue-bright);
+    opacity: var(--o);
+    filter: blur(calc((1 - var(--o)) * 10px));
+    text-shadow: 0 2px 40px rgba(0, 0, 0, .6);
+    pointer-events: none;
+  }
+
+  .hero__intro { animation: rise .9s .15s cubic-bezier(.2, .7, .2, 1) both; }
+
+  .fader {
+    display: grid; grid-template-columns: auto minmax(8rem, 22rem) auto; align-items: center; gap: 1rem;
+    margin: 2.25rem 0 2.5rem; color: var(--muted); font-size: .9375rem;
+  }
+  .fader__end { text-shadow: 0 0 10px #000, 0 0 22px #000, 0 0 34px #000; }
+  .fader__end[lang="he"] { font-family: var(--serif); font-size: 1.15rem; color: #DCE9FF; }
+  .fader__end[lang="en"] { color: var(--pale); }
+
+  .fader input {
+    -webkit-appearance: none; appearance: none;
+    width: 100%; height: 2.75rem; margin: 0; padding: 0; border: 0; background: transparent; cursor: grab;
+  }
+  .fader input:active { cursor: grabbing; }
+  .fader input::-webkit-slider-runnable-track { height: 2px; background: linear-gradient(90deg, var(--pale), var(--blue)); border-radius: 2px; }
+  .fader input::-moz-range-track { height: 2px; background: linear-gradient(90deg, var(--pale), var(--blue)); border-radius: 2px; }
+  .fader input::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none;
+    width: 1.45rem; height: 2.5rem; margin-top: -1.25rem; border: 0; border-radius: 5px;
+    background: linear-gradient(90deg, transparent calc(50% - 1px), var(--black) calc(50% - 1px), var(--black) calc(50% + 1px), transparent calc(50% + 1px)), var(--ice);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .6), 0 0 22px rgba(47, 107, 255, .45);
+  }
+  .fader input::-moz-range-thumb {
+    width: 1.45rem; height: 2.5rem; border: 0; border-radius: 5px;
+    background: linear-gradient(90deg, transparent calc(50% - 1px), var(--black) calc(50% - 1px), var(--black) calc(50% + 1px), transparent calc(50% + 1px)), var(--ice);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .6), 0 0 22px rgba(47, 107, 255, .45);
+  }
+
+  .hero__lede { max-width: 34rem; font-size: clamp(1.1rem, 1.6vw, 1.3rem); color: var(--pale); }
+  .hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem 2rem; margin-top: 2rem; }
+  .hero__area { margin-top: clamp(3rem, 8vh, 5.5rem); color: var(--muted); font-size: .9375rem; }
+
+  @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+  /* ---------- Services ---------- */
+  .services { padding: clamp(5rem, 11vw, 9rem) 0; }
+  .split { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+  .split__head { position: sticky; top: 6.5rem; }
+  .split__head p { margin-top: 1.5rem; max-width: 26rem; color: var(--muted); }
+
+  .list__item { padding: 2.1rem 0; border-top: 1px solid var(--line); }
+  .list__item:last-child { border-bottom: 1px solid var(--line); }
+  .list__item h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.6rem, 2.6vw, 2.1rem); line-height: 1.15; }
+  .list__item p { margin-top: .6rem; max-width: 34rem; color: var(--muted); }
+
+  /* ---------- Photo bands ---------- */
+  .band { position: relative; overflow: hidden; isolation: isolate; display: flex; }
+  .band .wrap { position: relative; z-index: 1; width: 100%; }
+  .band h2 { max-width: 44rem; text-shadow: 0 2px 30px rgba(0, 0, 0, .55); }
+  .band p { margin-top: 1.5rem; max-width: 30rem; color: var(--pale); font-size: 1.15rem; }
+  .band .btn { margin-top: 2.25rem; }
+
+  .band--crowd { min-height: min(88svh, 52rem); align-items: flex-end; padding: 6rem 0; }
+  .band--crowd .photo { object-position: 50% 40%; }
+  .band--crowd .shade { background: linear-gradient(0deg, rgba(0,0,0,.92) 0%, rgba(0,0,0,.55) 40%, rgba(0,0,0,.1) 75%), linear-gradient(180deg, #000 0%, rgba(0,0,0,0) 18%); }
+
+  .band--music { min-height: min(110svh, 66rem); align-items: flex-start; padding: clamp(5rem, 11vw, 8rem) 0 6rem; }
+  .band--music .photo { object-position: 50% 100%; }
+  .band--music .shade { background: linear-gradient(180deg, #000 0%, rgba(0,0,0,.78) 32%, rgba(0,0,0,.25) 52%, rgba(0,0,0,0) 66%), linear-gradient(0deg, #000 0%, rgba(0,0,0,0) 22%); }
+  .band .he { display: block; width: fit-content; margin-top: 1.75rem; font-family: var(--serif); font-weight: 300; font-size: clamp(1.6rem, 3vw, 2.4rem); line-height: 1.25; color: var(--blue-bright); text-shadow: 0 2px 24px rgba(0, 0, 0, .7); }
+
+  /* ---------- Gear ---------- */
+  .gear { padding-bottom: clamp(5rem, 11vw, 9rem); }
+  .band--gear { min-height: min(80svh, 48rem); align-items: flex-end; padding: 7rem 0 3.5rem; }
+  .band--gear .photo { object-position: 45% 62%; }
+  .band--gear .shade { background: linear-gradient(0deg, #000 0%, rgba(0,0,0,.6) 32%, rgba(0,0,0,.1) 70%), linear-gradient(90deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,0) 65%), linear-gradient(180deg, #000 0%, rgba(0,0,0,.6) 14%, rgba(0,0,0,0) 34%); }
+
+  .chain { list-style: none; margin: 1rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 2rem; position: relative; }
+  .chain::before { content: ""; position: absolute; top: .45rem; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, var(--pale), var(--blue)); opacity: .8; }
+  .chain li { position: relative; padding-top: 2.25rem; }
+  .chain li::before {
+    content: ""; position: absolute; top: 0; left: 0; width: .9rem; height: .9rem; border-radius: 50%;
+    background: var(--black); border: 2px solid var(--pale);
+  }
+  .chain li:nth-child(n+3)::before { border-color: var(--blue-bright); }
+  .chain h3 { font-family: var(--serif); font-weight: 400; font-size: 1.5rem; line-height: 1.2; }
+  .chain p { margin-top: .5rem; color: var(--muted); font-size: 1rem; }
+
+  /* ---------- Contact ---------- */
+  .contact { position: relative; overflow: hidden; isolation: isolate; padding: clamp(5rem, 11vw, 9rem) 0; background: var(--night); }
+  .contact .photo { opacity: .55; }
+  .contact .shade { background: linear-gradient(180deg, #000 0%, rgba(0,0,0,.62) 22%, rgba(0,0,0,.72) 100%); }
+  .contact .wrap { position: relative; z-index: 1; }
+  .contact .split__head { position: static; }
+  .contact__social { display: flex; gap: 1.5rem; margin-top: 2.5rem; flex-wrap: wrap; }
+
+  form { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .field { display: flex; flex-direction: column; gap: .4rem; }
+  .field--full { grid-column: 1 / -1; }
+  label { font-size: .9375rem; color: var(--muted); }
+  form input, form select, form textarea {
+    width: 100%; padding: .85rem 1rem;
+    background: rgba(0, 0, 0, .5); color: var(--ice);
+    border: 1px solid rgba(207, 226, 255, .28); border-radius: 6px;
+    font: inherit; transition: border-color .2s, background .2s;
+  }
+  form select { appearance: none; -webkit-appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--pale) 50%), linear-gradient(135deg, var(--pale) 50%, transparent 50%); background-position: calc(100% - 1.25rem) 55%, calc(100% - .9rem) 55%; background-size: .35rem .35rem; background-repeat: no-repeat; padding-right: 2.5rem; }
+  form select option { color: #000; }
+  form textarea { resize: vertical; min-height: 8rem; }
+  form input:hover, form select:hover, form textarea:hover { border-color: rgba(207, 226, 255, .55); }
+  form input:focus-visible, form select:focus-visible, form textarea:focus-visible { outline: none; border-color: var(--blue-bright); background: rgba(0, 0, 0, .7); }
+  form input[type="date"] { color-scheme: dark; }
+  form .hp { position: absolute; left: -9999px; }
+  .form__foot { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem; }
+  .status { min-height: 1.5rem; font-size: .975rem; }
+  .status[data-state="ok"] { color: var(--pale); }
+  .status[data-state="error"] { color: #ffb4a8; }
+
+  /* ---------- Footer ---------- */
+  footer { padding: 2.5rem 0 3rem; background: var(--black); color: var(--muted); font-size: .9375rem; border-top: 1px solid var(--line); }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 62rem) {
+    .split { grid-template-columns: 1fr; }
+    .split__head { position: static; }
+  }
+  @media (max-width: 75rem) {
+    .chain { grid-template-columns: 1fr; gap: 0; margin-top: 2rem; }
+    .chain::before { top: 0; bottom: 0; left: .45rem; right: auto; width: 1px; height: auto; background: linear-gradient(180deg, var(--pale), var(--blue)); }
+    .chain li { padding: 0 0 2.25rem 2.5rem; }
+    .chain li::before { top: .35rem; }
+  }
+  @media (max-width: 46rem) {
+    .nav__links a:not(.btn) { display: none; }
+    .nav__bar { gap: 1rem; }
+    .logo img { height: 2.6rem; }
+    .btn--small { padding: .5rem 1rem; }
+    form { grid-template-columns: 1fr; }
+    .fader { grid-template-columns: auto 1fr auto; gap: .75rem; }
+    .hero .shade { background: linear-gradient(180deg, rgba(0,0,0,.6) 0%, rgba(0,0,0,.5) 60%, #000 100%); }
+    .band--music .photo { object-position: 30% 100%; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .hero__intro { animation: none; }
+    .btn { transition: none; }
+  }
+</style>
+</head>
+
+<body>
+
+<!--
+  HOSTING NOTES
+  - Static site: upload this whole folder (index.html + images/) to Cloudflare Pages, Netlify or GitHub Pages.
+  - Logo: images/logo.png is the black-background version; images/logo-original.png keeps the original colours.
+  - Contact form: create a free form at formspree.io and replace YOUR_FORM_ID below.
+-->
+
+<header class="nav" id="nav">
+  <div class="nav__bar">
+    <a class="logo" href="#top" aria-label="Mixedreams, back to top">
+      <img src="images/logo.png" alt="Mixedreams" onerror="this.replaceWith(document.createTextNode('Mixedreams'))">
+    </a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#music">Music</a>
+      <a href="#gear">Gear</a>
+      <a class="btn btn--small" href="#contact">Plan your event</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <img class="photo" src="images/waveform.jpg" alt="" fetchpriority="high">
+    <div class="tint"></div>
+    <div class="shade"></div>
+    <div class="wrap">
+      <h1 class="display mix">
+        <span class="mix__a" lang="en">Your dreams,<br>my music.</span>
+        <span class="mix__b" lang="he" dir="rtl" aria-hidden="true">החלומות שלך,<br>המוסיקה שלי.</span>
+      </h1>
+
+      <div class="hero__intro">
+        <div class="fader">
+          <span class="fader__end" lang="en">English</span>
+          <input id="fader" type="range" min="0" max="100" value="0" aria-label="Mix the headline between English and Hebrew">
+          <span class="fader__end" lang="he">עברית</span>
+        </div>
+
+        <p class="hero__lede">Israeli and world music DJ for weddings, bar and bat mitzvas, and private events across the greater Seattle area.</p>
+
+        <div class="hero__actions">
+          <a class="btn" href="#contact">Plan your event</a>
+          <a class="textlink" href="https://soundcloud.com/mixedreams" target="_blank" rel="noopener">Listen on SoundCloud</a>
+        </div>
+
+        <p class="hero__area">Serving Seattle, Bellevue, Redmond and the Puget Sound area.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="wrap split">
+      <div class="split__head">
+        <h2 class="display">One DJ for every kind of celebration</h2>
+        <p>Use my experience and rich music collection to build the event you have in mind, at the venue of your choice.</p>
+      </div>
+
+      <div class="list">
+        <article class="list__item">
+          <h3>Weddings and celebrations</h3>
+          <p>Public events, weddings, corporate and private parties for all ages.</p>
+        </article>
+        <article class="list__item">
+          <h3>Bar and bat mitzvas</h3>
+          <p>A mix of local hits and traditional music that gets every generation on the dance floor.</p>
+        </article>
+        <article class="list__item">
+          <h3>Custom productions</h3>
+          <p>Tailor-made events, from tribute evenings to themed nights. Pick from past productions or create your own.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DANCE FLOOR BAND -->
+  <section class="band band--crowd" aria-labelledby="crowd-title">
+    <img class="photo" src="images/crowd.jpg" alt="" loading="lazy">
+    <div class="shade"></div>
+    <div class="wrap">
+      <h2 class="display" id="crowd-title">Transform your event into an unforgettable memory</h2>
+      <a class="btn" href="#contact">Plan your event</a>
+    </div>
+  </section>
+
+  <!-- ISRAELI MUSIC BAND -->
+  <section class="band band--music" id="music" aria-labelledby="music-title">
+    <img class="photo" src="images/telaviv.jpg" alt="" loading="lazy">
+    <div class="shade"></div>
+    <div class="wrap">
+      <h2 class="display" id="music-title">Israeli and world music</h2>
+      <p>A repertoire that mixes new and old songs, from a diverse selection of Israeli and international artists.</p>
+      <span class="he" lang="he" dir="rtl">רפרטואר המשלב שירים חדשים וישנים</span>
+    </div>
+  </section>
+
+  <!-- GEAR -->
+  <section class="gear" id="gear">
+    <div class="band band--gear">
+      <img class="photo" src="images/dj-controller.jpg" alt="" loading="lazy">
+      <div class="shade"></div>
+      <div class="wrap">
+        <h2 class="display">I arrive at every event fully backed up</h2>
+        <p>Professional equipment from laptop to speakers, so your night runs smoothly and you can enjoy it.</p>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <ol class="chain">
+        <li>
+          <h3>Computer</h3>
+          <p>MacBook Pro for smooth, reliable playback.</p>
+        </li>
+        <li>
+          <h3>Controller and software</h3>
+          <p>Rane Four controller with professional Serato DJ software.</p>
+        </li>
+        <li>
+          <h3>Mixer</h3>
+          <p>Mackie ProFX8, which connects to any venue sound system.</p>
+        </li>
+        <li>
+          <h3>Speakers and mics</h3>
+          <p>QSC K12 speakers and sub with Sennheiser and Shure microphones and headset.</p>
+        </li>
+        <li>
+          <h3>Accessories</h3>
+          <p>Fog machine and lights.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <img class="photo" src="images/dancers.jpg" alt="" loading="lazy">
+    <div class="shade"></div>
+    <div class="wrap split">
+      <div class="split__head">
+        <h2 class="display">Let's plan your event</h2>
+        <p>Leave your details and I'll get back to you shortly.</p>
+        <div class="contact__social">
+          <a class="textlink" href="https://www.facebook.com/mixedreams" target="_blank" rel="noopener">Facebook</a>
+          <a class="textlink" href="https://soundcloud.com/mixedreams" target="_blank" rel="noopener">SoundCloud</a>
+          <a class="textlink" href="https://www.linkedin.com/company/mixedreams" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+
+      <!-- Replace YOUR_FORM_ID with your Formspree form ID -->
+      <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="phone">Phone (optional)</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel">
+        </div>
+        <div class="field">
+          <label for="date">Event date (optional)</label>
+          <input id="date" name="event_date" type="date">
+        </div>
+        <div class="field field--full">
+          <label for="type">Type of event</label>
+          <select id="type" name="event_type">
+            <option>Wedding</option>
+            <option>Bar or Bat Mitzva</option>
+            <option>Party or celebration</option>
+            <option>Corporate event</option>
+            <option>Custom production</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field field--full">
+          <label for="message">Tell me about your event</label>
+          <textarea id="message" name="message"></textarea>
+        </div>
+        <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="form__foot">
+          <button class="btn" type="submit">Send my details</button>
+          <p class="status" id="status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="year">2026</span> Mixedreams. Music services in the greater Seattle area.</span>
+    <a class="textlink" href="#top">Back to top</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var hero = document.getElementById('hero');
+  var fader = document.getElementById('fader');
+  var nav = document.getElementById('nav');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var touched = false;
+
+  function setMix(v) { hero.style.setProperty('--mix', (v / 100).toFixed(3)); }
+  fader.addEventListener('input', function () { touched = true; setMix(fader.value); });
+
+  // One intro sweep so visitors discover the fader, then it rests at English.
+  if (!reduce) {
+    var start = null, delay = 900, dur = 2600;
+    function ease(t) { return t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }
+    function step(ts) {
+      if (touched) return;
+      if (start === null) start = ts;
+      var t = (ts - start - delay) / dur;
+      if (t < 0) { requestAnimationFrame(step); return; }
+      if (t >= 1) { fader.value = 0; setMix(0); return; }
+      var v = Math.sin(Math.PI * ease(t)) * 100;   // 0 -> 100 -> 0
+      fader.value = v; setMix(v);
+      requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  function onScroll() { nav.classList.toggle('is-scrolled', window.scrollY > 40); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var form = document.getElementById('contact-form');
+  var status = document.getElementById('status');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    status.removeAttribute('data-state');
+    status.textContent = 'Sending...';
+    fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+      .then(function (r) {
+        if (!r.ok) throw new Error('bad response');
+        form.reset();
+        status.dataset.state = 'ok';
+        status.textContent = 'Thank you. Your details were sent and I will be in touch shortly.';
+      })
+      .catch(function () {
+        status.dataset.state = 'error';
+        status.textContent = 'Your message did not send. Check your connection and try again.';
+      })
+      .then(function () { btn.disabled = false; });
+  });
+})();
+</script>
+</body>
+</html>
