@@ -28,6 +28,7 @@
   "name": "Mixedreams",
   "description": "DJ and music services with Israeli, Jewish and world music repertoire for weddings, bar and bat mitzvas, parties and productions.",
   "url": "https://www.mixedreams.com/",
+  "telephone": "+14252987481",
   "areaServed": ["Seattle, WA", "Bellevue, WA", "Redmond, WA", "Puget Sound, WA"],
   "sameAs": [
     "https://www.facebook.com/mixedreams",
@@ -99,7 +100,7 @@
   }
   .btn:hover { background: #fff; transform: translateY(-1px); }
   .btn--small { min-height: 2.5rem; padding: .5rem 1.25rem; font-size: .9375rem; }
-  .textlink { color: var(--ice); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: .35em; transition: text-decoration-color .2s; }
+  .textlink { display: inline-block; padding: .7rem 0; color: var(--ice); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: .35em; transition: text-decoration-color .2s; }
   .textlink:hover { text-decoration-color: var(--blue-bright); }
 
   /* ---------- Nav ---------- */
@@ -112,7 +113,7 @@
   .logo { display: inline-flex; align-items: center; font-family: var(--serif); font-size: 1.6rem; font-weight: 400; letter-spacing: -.01em; text-decoration: none; }
   .logo img { height: 3.3rem; width: auto; }
   .nav__links { display: flex; align-items: center; gap: 2rem; }
-  .nav__links a:not(.btn) { text-decoration: none; font-size: .975rem; color: var(--muted); transition: color .2s; }
+  .nav__links a:not(.btn) { padding: .7rem 0; text-decoration: none; font-size: .975rem; color: var(--muted); transition: color .2s; }
   .nav__links a:not(.btn):hover { color: var(--ice); }
 
   /* ---------- Hero ---------- */
@@ -236,6 +237,24 @@
   .contact .split__head { position: static; }
   .contact__social { display: flex; gap: 1.5rem; margin-top: 2.5rem; flex-wrap: wrap; }
 
+  .btn--ghost { background: transparent; color: var(--ice); box-shadow: inset 0 0 0 1px rgba(207, 226, 255, .5); }
+  .btn--ghost:hover { background: rgba(207, 226, 255, .12); }
+
+  .phone { margin-top: 2.25rem; }
+  .phone__label { display: block; color: var(--muted); font-size: .9375rem; }
+  .phone__number {
+    display: inline-block; margin-top: .15rem; padding: .3rem 0;
+    font-family: var(--serif); font-weight: 300; font-size: clamp(2.2rem, 4.4vw, 3.1rem); line-height: 1.1; letter-spacing: -.01em;
+    text-decoration: none; color: var(--ice);
+    border-bottom: 1px solid rgba(207, 226, 255, .3); transition: border-color .2s, color .2s;
+  }
+  .phone__number:hover { border-color: var(--blue-bright); color: #fff; }
+  /* Call / Text buttons only where a finger is the pointer; desktops just show the number */
+  .phone__actions { display: none; gap: .75rem; margin-top: 1.25rem; }
+  @media (pointer: coarse) { .phone__actions { display: flex; } .phone__actions .btn { flex: 1; max-width: 12rem; } }
+
+  .form__title { grid-column: 1 / -1; font-family: var(--serif); font-weight: 400; font-size: 1.6rem; line-height: 1.2; margin-bottom: .25rem; }
+
   form { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
   .field { display: flex; flex-direction: column; gap: .4rem; }
   .field--full { grid-column: 1 / -1; }
@@ -298,7 +317,7 @@
   HOSTING NOTES
   - Static site: upload this whole folder (index.html + images/) to Cloudflare Pages, Netlify or GitHub Pages.
   - Logo: images/logo.png is the black-background version; images/logo-original.png keeps the original colours.
-  - Contact form: create a free form at formspree.io and replace YOUR_FORM_ID below.
+  - Contact form: get a free access key at web3forms.com and paste it over YOUR_ACCESS_KEY in the form.
 -->
 
 <header class="nav" id="nav">
@@ -437,7 +456,18 @@
     <div class="wrap split">
       <div class="split__head">
         <h2 class="display">Let's plan your event</h2>
-        <p>Leave your details and I'll get back to you shortly.</p>
+        <p>Call or text me, or leave your details and I'll get back to you shortly.</p>
+
+        <!-- PHONE: number appears here, in the Call/Text buttons, and in the JSON-LD block at the top -->
+        <div class="phone">
+          <span class="phone__label">Call or text</span>
+          <a class="phone__number" href="tel:+14252987481">(425) 298-7481</a>
+          <div class="phone__actions">
+            <a class="btn" href="tel:+14252987481">Call</a>
+            <a class="btn btn--ghost" href="sms:+14252987481">Text</a>
+          </div>
+        </div>
+
         <div class="contact__social">
           <a class="textlink" href="https://www.facebook.com/mixedreams" target="_blank" rel="noopener">Facebook</a>
           <a class="textlink" href="https://soundcloud.com/mixedreams" target="_blank" rel="noopener">SoundCloud</a>
@@ -445,8 +475,12 @@
         </div>
       </div>
 
-      <!-- Replace YOUR_FORM_ID with your Formspree form ID -->
-      <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <!-- Replace YOUR_ACCESS_KEY with the Web3Forms access key emailed to xxxx@gmail.com -->
+      <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="7c0d2be6-1aed-4cfc-a184-f0beb99b941c">
+        <input type="hidden" name="subject" value="New event inquiry from the Mixedreams website">
+        <input type="hidden" name="from_name" value="Mixedreams website">
+        <h3 class="form__title">Or leave your details</h3>
         <div class="field">
           <label for="name">Your name</label>
           <input id="name" name="name" type="text" autocomplete="name" required>
@@ -478,7 +512,7 @@
           <label for="message">Tell me about your event</label>
           <textarea id="message" name="message"></textarea>
         </div>
-        <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input class="hp" type="text" name="website_url" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="form__foot">
           <button class="btn" type="submit">Send my details</button>
           <p class="status" id="status" role="status" aria-live="polite"></p>
@@ -534,12 +568,23 @@
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var btn = form.querySelector('button[type="submit"]');
+    var data = new FormData(form);
+
+    // Spam trap: real visitors never see or fill this field.
+    if (data.get('website_url')) {
+      status.dataset.state = 'ok';
+      status.textContent = 'Thank you. Your details were sent and I will be in touch shortly.';
+      return;
+    }
+    data.delete('website_url');
+
     btn.disabled = true;
     status.removeAttribute('data-state');
     status.textContent = 'Sending...';
-    fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
-      .then(function (r) {
-        if (!r.ok) throw new Error('bad response');
+    fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        if (!res.success) throw new Error('not accepted');
         form.reset();
         status.dataset.state = 'ok';
         status.textContent = 'Thank you. Your details were sent and I will be in touch shortly.';
@@ -554,3 +599,4 @@
 </script>
 </body>
 </html>
+
