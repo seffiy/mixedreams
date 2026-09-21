@@ -3,22 +3,34 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Mixedreams | Israeli &amp; World Music DJ in Seattle, Bellevue &amp; Redmond</title>
-<meta name="description" content="Israeli and world music DJ for weddings, bar and bat mitzvas, parties and productions in the greater Seattle, Bellevue, Redmond and Puget Sound area.">
+<title>Israeli &amp; World Music DJ in Seattle | Mixedreams</title>
+<meta name="description" content="Israeli and world music DJ for weddings, bar and bat mitzvas and parties in Seattle, Bellevue, Redmond and the Puget Sound area. Call, text or request a date.">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#000000">
+<!-- Google Search Console (HTML tag method only): paste the verification tag here if you use it.
+<meta name="google-site-verification" content="YOUR_CODE">
+-->
 <link rel="canonical" href="https://www.mixedreams.com/">
 <link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/favicon.png">
 
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mixedreams">
-<meta property="og:title" content="Mixedreams | Your dreams, my music">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Mixedreams | Israeli &amp; World Music DJ in Seattle">
 <meta property="og:description" content="Israeli and world music DJ for weddings, bar and bat mitzvas and private events in the greater Seattle area.">
 <meta property="og:url" content="https://www.mixedreams.com/">
-<!-- TODO: save a 1200x630 image (e.g. a crop of waveform.jpg) as images/og.jpg, then uncomment:
 <meta property="og:image" content="https://www.mixedreams.com/images/og.jpg">
--->
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mixedreams logo over a blue sound wave: Israeli and world music DJ">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mixedreams | Israeli &amp; World Music DJ in Seattle">
+<meta name="twitter:description" content="Weddings, bar and bat mitzvas and private events in Seattle, Bellevue, Redmond and the Puget Sound area.">
+<meta name="twitter:image" content="https://www.mixedreams.com/images/og.jpg">
 
+<link rel="preload" as="image" href="images/waveform.jpg" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
@@ -26,16 +38,59 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "EntertainmentBusiness",
-  "name": "Mixedreams",
-  "description": "DJ and music services with Israeli, Jewish and world music repertoire for weddings, bar and bat mitzvas, parties and productions.",
-  "url": "https://www.mixedreams.com/",
-  "telephone": "+14252987481",
-  "areaServed": ["Seattle, WA", "Bellevue, WA", "Redmond, WA", "Puget Sound, WA"],
-  "sameAs": [
-    "https://www.facebook.com/mixedreams",
-    "https://soundcloud.com/mixedreams",
-    "https://www.linkedin.com/company/mixedreams"
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.mixedreams.com/#website",
+      "url": "https://www.mixedreams.com/",
+      "name": "Mixedreams",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "EntertainmentBusiness",
+      "@id": "https://www.mixedreams.com/#business",
+      "name": "Mixedreams",
+      "url": "https://www.mixedreams.com/",
+      "description": "Israeli and world music DJ for weddings, bar and bat mitzvas, parties and custom productions in the greater Seattle area.",
+      "image": "https://www.mixedreams.com/images/og.jpg",
+      "logo": "https://www.mixedreams.com/images/favicon.png",
+      "telephone": "+14252987481",
+      "knowsLanguage": [
+        "en",
+        "he"
+      ],
+      "serviceType": [
+        "Wedding DJ",
+        "Bar and Bat Mitzva DJ",
+        "Israeli music DJ",
+        "World music DJ",
+        "Corporate and private party DJ",
+        "Custom event productions"
+      ],
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Seattle, WA"
+        },
+        {
+          "@type": "City",
+          "name": "Bellevue, WA"
+        },
+        {
+          "@type": "City",
+          "name": "Redmond, WA"
+        },
+        {
+          "@type": "Place",
+          "name": "Puget Sound, WA"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/mixedreams",
+        "https://soundcloud.com/mixedreams",
+        "https://www.linkedin.com/company/mixedreams"
+      ]
+    }
   ]
 }
 </script>
@@ -135,6 +190,8 @@
   }
   .hero .wrap { position: relative; z-index: 1; width: 100%; }
 
+  .hero__title { font-size: 1rem; font-weight: 400; }
+  .hero__eyebrow { display: block; margin-bottom: 1.1rem; font: 500 clamp(.95rem, 1.5vw, 1.15rem)/1.4 var(--sans); letter-spacing: .02em; color: var(--pale); text-shadow: 0 2px 20px rgba(0, 0, 0, .7); }
   .mix { display: grid; font-size: clamp(3.4rem, 11.5vw, 9.75rem); }
   .mix > span { grid-area: 1 / 1; display: block; }
   .mix__a {
@@ -189,6 +246,9 @@
 
   /* ---------- Services ---------- */
   .services { padding: clamp(5rem, 11vw, 9rem) 0; }
+  .faq { padding: 0 0 clamp(5rem, 11vw, 9rem); }
+  .faq .list__item h3 { font-size: clamp(1.3rem, 2vw, 1.55rem); }
+  .faq .list__item p .textlink { padding: 0; }
   .split { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; }
   .split__head { position: sticky; top: 6.5rem; }
   .split__head p { margin-top: 1.5rem; max-width: 26rem; color: var(--muted); }
@@ -212,6 +272,7 @@
   .band--music { min-height: min(110svh, 66rem); align-items: flex-start; padding: clamp(5rem, 11vw, 8rem) 0 6rem; }
   .band--music .photo { object-position: 50% 100%; }
   .band--music .shade { background: linear-gradient(180deg, #000 0%, rgba(0,0,0,.78) 32%, rgba(0,0,0,.25) 52%, rgba(0,0,0,0) 66%), linear-gradient(0deg, #000 0%, rgba(0,0,0,0) 22%); }
+  .band .he-note { width: fit-content; max-width: 100%; margin-top: 1rem; font-size: 1.0625rem; color: var(--pale); text-shadow: 0 1px 14px #000, 0 2px 28px #000; }
   .band .he { display: block; width: fit-content; margin-top: 1.75rem; font-family: var(--serif); font-weight: 300; font-size: clamp(1.6rem, 3vw, 2.4rem); line-height: 1.25; color: var(--blue-bright); text-shadow: 0 2px 24px rgba(0, 0, 0, .7); }
 
   /* ---------- Gear ---------- */
@@ -325,7 +386,7 @@
 <header class="nav" id="nav">
   <div class="nav__bar">
     <a class="logo" href="#top" aria-label="Mixedreams, back to top">
-      <img src="images/logo.png" alt="Mixedreams" onerror="this.replaceWith(document.createTextNode('Mixedreams'))">
+      <img src="images/logo.png" alt="Mixedreams" width="1400" height="326" onerror="this.replaceWith(document.createTextNode('Mixedreams'))">
     </a>
     <nav class="nav__links" aria-label="Main">
       <a href="#services">Services</a>
@@ -344,9 +405,12 @@
     <div class="tint"></div>
     <div class="shade"></div>
     <div class="wrap">
-      <h1 class="display mix">
-        <span class="mix__a" lang="en">Your dreams,<br>my music.</span>
-        <span class="mix__b" lang="he" dir="rtl" aria-hidden="true">החלומות שלך,<br>המוסיקה שלי.</span>
+      <h1 class="hero__title">
+        <span class="hero__eyebrow">Israeli and world music DJ in Seattle</span>
+        <span class="display mix">
+          <span class="mix__a" lang="en">Your dreams,<br>my music.</span>
+          <span class="mix__b" lang="he" dir="rtl" aria-hidden="true">החלומות שלך,<br>המוסיקה שלי.</span>
+        </span>
       </h1>
 
       <div class="hero__intro">
@@ -411,6 +475,7 @@
       <h2 class="display" id="music-title">Israeli and world music</h2>
       <p>A repertoire that mixes new and old songs, from a diverse selection of Israeli and international artists.</p>
       <span class="he" lang="he" dir="rtl">רפרטואר המשלב שירים חדשים וישנים</span>
+      <p class="he-note" lang="he" dir="rtl">די ג'יי למוזיקה ישראלית ועולמית לחתונות, בר ובת מצווה ואירועים פרטיים באזור סיאטל רבתי.</p>
     </div>
   </section>
 
@@ -448,6 +513,39 @@
           <p>Fog machine and lights.</p>
         </li>
       </ol>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq" aria-labelledby="faq-title">
+    <div class="wrap split">
+      <div class="split__head">
+        <h2 class="display" id="faq-title">Questions about hiring a DJ</h2>
+        <p>Straight answers about the music, the areas I serve and how to book.</p>
+      </div>
+
+      <div class="list">
+        <article class="list__item">
+          <h3>Do you play Israeli music at weddings and bar or bat mitzvas?</h3>
+          <p>Yes. Israeli and world music is my specialty, from new hits to classic songs. For bar and bat mitzvas I blend local hits with traditional music so every generation gets on the dance floor.</p>
+        </article>
+        <article class="list__item">
+          <h3>Which areas do you serve?</h3>
+          <p>Seattle, Bellevue, Redmond and the wider Puget Sound area, at the venue of your choice.</p>
+        </article>
+        <article class="list__item">
+          <h3>What kinds of events do you DJ?</h3>
+          <p>Weddings, bar and bat mitzvas, corporate and private parties, holiday and community celebrations, and custom productions such as tribute evenings and themed nights.</p>
+        </article>
+        <article class="list__item">
+          <h3>What equipment do you bring?</h3>
+          <p>A MacBook Pro, Rane Four controller with Serato DJ, Mackie ProFX8 mixer, QSC K12 speakers and sub, Sennheiser and Shure microphones and headset, plus a fog machine and lights. I arrive at every event fully backed up.</p>
+        </article>
+        <article class="list__item">
+          <h3>How do I check availability and book?</h3>
+          <p>Call or text me, or send your event date and details through the <a class="textlink" href="#contact">contact form</a> and I'll get back to you shortly.</p>
+        </article>
+      </div>
     </div>
   </section>
 
