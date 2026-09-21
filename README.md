@@ -30,6 +30,8 @@ mixedreams/
 ├── robots.txt          Tells search engines what to crawl and where the sitemap is
 ├── sitemap.xml         Lists the one page of the site for Google Search Console
 ├── 404.html            Friendly page shown for old or mistyped addresses
+├── audio/
+│   └── background.mp3      Optional background music (you add this file)
 ├── README.md           This file
 └── images/
     ├── logo.png            Logo for the black background (used on the site)
@@ -109,6 +111,16 @@ GitHub's instructions are at https://docs.github.com/pages/configuring-a-custom-
 
 Every time you push a change to `main`, GitHub republishes the site automatically. It can take a minute or two to appear.
 
+## Background music
+
+The site has an optional **Play music** button in the bottom-left corner.
+
+- Save your track as `audio/background.mp3`. The button appears only when the file exists, so the site works normally without it.
+- Music never starts by itself. Browsers block sound until the visitor taps or clicks, so the visitor starts it with the button. It fades in, loops, and pauses when they switch to another tab.
+- Keep the file small (about 2 to 4 MB). GitHub Pages serves it as-is, and the page only fetches a tiny part of it until someone presses play.
+- Use music you own or have a licence to play publicly. A DJ mix of other artists' songs is not automatically cleared for a public website.
+- To change the volume, edit `var LEVEL = 0.5;` near the bottom of `index.html` (0 is silent, 1 is full volume).
+
 ## Search engine optimisation (SEO)
 
 Already built into `index.html`:
@@ -140,3 +152,4 @@ After publishing:
 - Fonts: [Frank Ruhl Libre](https://fonts.google.com/specimen/Frank+Ruhl+Libre) and [Hanken Grotesk](https://fonts.google.com/specimen/Hanken+Grotesk), both from Google Fonts under the SIL Open Font License.
 - Photos: stock images licensed for use on this site. Keep your licence receipts on file, and check the licence terms before reusing the images anywhere else.
 - Logo and written content: © Mixedreams.
+
