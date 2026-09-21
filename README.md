@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="images/readme-banner.jpg" alt="Mixedreams: Your dreams, my music. Israeli and world music DJ in Seattle, Bellevue and Redmond" width="100%">
+</p>
+
 # Mixedreams
 
 Single-page website for **Mixedreams**, an Israeli and world music DJ service for weddings, bar and bat mitzvas, parties and productions in the greater Seattle area.
@@ -23,10 +27,16 @@ The page is responsive (phone, tablet, laptop) and respects the "reduce motion" 
 ```
 mixedreams/
 ├── index.html          The whole site: content, styles and scripts
+├── robots.txt          Tells search engines what to crawl and where the sitemap is
+├── sitemap.xml         Lists the one page of the site for Google Search Console
+├── 404.html            Friendly page shown for old or mistyped addresses
 ├── README.md           This file
 └── images/
     ├── logo.png            Logo for the black background (used on the site)
     ├── logo-original.png   Logo in its original colours, transparent background
+    ├── favicon.png         Browser tab and home-screen icon (512 x 512)
+    ├── og.jpg              1200 x 630 preview image for Facebook, WhatsApp and search shares
+    ├── readme-banner.jpg   Banner shown at the top of this README (not used on the website)
     ├── waveform.jpg        Hero background
     ├── crowd.jpg           Dance floor band
     ├── telaviv.jpg         Israeli music band
@@ -61,7 +71,7 @@ Everything is in `index.html`. Search for the text you want to change.
 
 Keep the same file names so nothing in the HTML needs to change. Save photos as JPEG, around 2000 to 2200 px wide, compressed to roughly 150 to 500 KB. Large originals slow the page down, especially on phones.
 
-The logo is `images/logo.png`. It is a transparent PNG with light lettering so it stays readable on black.
+The logo is `images/logo.png`. It is a transparent PNG with light lettering so it stays readable on black. The tab icon is `images/favicon.png`, made from the ring mark of the logo on a black tile.
 
 ## Contact form setup
 
@@ -98,6 +108,24 @@ GitHub Pages hosts static sites for free. On a free GitHub account the repositor
 GitHub's instructions are at https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site and are the source of truth if anything above has changed.
 
 Every time you push a change to `main`, GitHub republishes the site automatically. It can take a minute or two to appear.
+
+## Search engine optimisation (SEO)
+
+Already built into `index.html`:
+
+- A keyword-focused page title and description, a visible "Israeli and world music DJ in Seattle" line inside the main heading, and a Questions section written around what people search for.
+- Business details for search engines (JSON-LD structured data): name, phone, languages, services and the areas served.
+- Social preview tags (Open Graph and Twitter) using `images/og.jpg`.
+- `robots.txt`, `sitemap.xml` and a custom `404.html`.
+
+After every content change that matters, update the date in `sitemap.xml`.
+
+After publishing:
+
+1. In **Google Search Console**, add the property for `https://www.mixedreams.com/`, submit `https://www.mixedreams.com/sitemap.xml`, then use **URL Inspection** on the home page and click **Request indexing**.
+2. Create a **Google Business Profile** (service-area business, category "DJ service") with your phone, website link, service areas, photos and services. This is the biggest factor for local searches.
+3. Keep the same business name and phone number on Facebook, SoundCloud, LinkedIn and any wedding or event directories, and link each of them back to the website.
+4. Ask happy clients for Google reviews, and add real testimonials and event photos to the page when you have them.
 
 ## Troubleshooting
 
