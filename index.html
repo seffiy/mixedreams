@@ -419,7 +419,7 @@
   - Static site: upload this whole folder (index.html + images/) to Cloudflare Pages, Netlify or GitHub Pages.
   - Logo: images/logo.png is the black-background version; images/logo-original.png keeps the original colours.
   - Background music: save your mp3 as audio/background.mp3 (about 2-4 MB works well). The Play music button appears only when the file exists.
-  - Contact form: get a free access key at web3forms.com and paste it over YOUR_ACCESS_KEY in the form.
+  - Contact form: get a free access key at web3forms.com and save it as the WEB3FORMS_ACCESS_KEY repository secret. The deploy workflow puts it into the page.
 -->
 
 <header class="nav" id="nav">
@@ -617,9 +617,9 @@
 
       </div>
 
-      <!-- Replace YOUR_ACCESS_KEY with the Web3Forms access key emailed to xxxx@gmail.com -->
+      <!-- The access_key placeholder below is filled in at deploy time from the WEB3FORMS_ACCESS_KEY repository secret (see .github/workflows/deploy.yml). -->
       <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="7c0d2be6-1aed-4cfc-a184-f0beb99b941c">
+        <input type="hidden" name="access_key" value="__WEB3FORMS_ACCESS_KEY__">
         <input type="hidden" name="subject" value="New event inquiry from the Mixedreams website">
         <input type="hidden" name="from_name" value="Mixedreams website">
         <h3 class="form__title">Or leave your details</h3>

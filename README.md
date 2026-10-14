@@ -81,12 +81,13 @@ The form sends its details to email through [Web3Forms](https://web3forms.com), 
 
 1. Go to web3forms.com, click **Create your Form**, and enter the Gmail address that should receive inquiries.
 2. Confirm the verification email. Your **access key** is then issued.
-3. In `index.html`, replace `YOUR_ACCESS_KEY` in the hidden `access_key` field with your key.
+3. In the GitHub repository, open **Settings**, then **Secrets and variables**, then **Actions**, click **New repository secret**, name it `WEB3FORMS_ACCESS_KEY` and paste your key as the value.
 4. Publish, then send yourself a test inquiry from the live site. Check Spam the first time and mark it "Not spam".
 
 Notes:
 
-- The access key is not a password. It is visible in the page source by design, and it keeps your email address out of the page.
+- The key is kept out of the repository: `index.html` holds the placeholder `__WEB3FORMS_ACCESS_KEY__`, and the deploy workflow swaps in the secret when it publishes. The key is still visible in the source of the live page, because the visitor's browser has to send it to Web3Forms. It is not a password, and it keeps your email address out of the page.
+- When you preview the site locally the form still has the placeholder, so it will not send from your computer.
 - The free plan has a monthly submission limit. Check web3forms.com/pricing for the current number.
 - The form includes a hidden spam trap field (`website_url`). Leave it in place.
 
@@ -96,7 +97,7 @@ GitHub Pages hosts static sites for free. On a free GitHub account the repositor
 
 1. Create a new repository on GitHub and upload the contents of this folder, so that `index.html` is at the top level of the repository.
 2. Open the repository's **Settings**, then **Pages**.
-3. Under **Build and deployment**, set **Source** to **Deploy from a branch**, choose the `main` branch and the `/ (root)` folder, and save.
+3. Under **Build and deployment**, set **Source** to **GitHub Actions**. The workflow in `.github/workflows/deploy.yml` publishes the site and fills in the Web3Forms key (see "Contact form setup").
 4. After a minute or two the site is live at `https://YOUR-USERNAME.github.io/REPOSITORY-NAME/`.
 
 ### Using www.mixedreams.com
@@ -109,7 +110,7 @@ GitHub Pages hosts static sites for free. On a free GitHub account the repositor
 
 GitHub's instructions are at https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site and are the source of truth if anything above has changed.
 
-Every time you push a change to `main`, GitHub republishes the site automatically. It can take a minute or two to appear.
+Every time you push a change to `main`, the deploy workflow republishes the site automatically. It can take a minute or two to appear, and you can follow it in the repository's **Actions** tab. If the `WEB3FORMS_ACCESS_KEY` secret is missing, the workflow stops with an error instead of publishing a form that cannot send.
 
 ## Background music
 
@@ -141,7 +142,7 @@ After publishing:
 
 ## Troubleshooting
 
-- **The form says "did not send".** Check that `YOUR_ACCESS_KEY` has been replaced with your real key and that you are connected to the internet.
+- **The form says "did not send".** Check that the `WEB3FORMS_ACCESS_KEY` secret is set, that the latest run in the **Actions** tab succeeded, that you are connected to the internet.
 - **An image is missing on the live site.** File names on GitHub Pages are case-sensitive. `Crowd.jpg` and `crowd.jpg` are different files, so match the names in the HTML exactly.
 - **The logo shows as text.** `images/logo.png` is missing or misnamed, so the page falls back to plain text.
 - **A change isn't showing.** Wait a couple of minutes for GitHub to republish, then hard-refresh the browser (Ctrl+Shift+R, or Cmd+Shift+R on a Mac).
